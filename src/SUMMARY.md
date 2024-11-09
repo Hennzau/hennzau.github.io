@@ -2,7 +2,7 @@
 
 - [Who I am](me.md)
 - [My Projects](projects.md)
-- [My Resume](cv.md)
+- [My Resume](resume.md)
 - [Details about my projects, my experiences](experiences.md)
   - [NXP Cup](experiences/nxp-cup.md)
   - [Contribution to Dora-LeRobot](experiences/dora-lerobot.md)
