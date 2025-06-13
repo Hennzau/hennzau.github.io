@@ -20,9 +20,8 @@
             :initial "50"
             "scripts/get_brightness")
 
-(defpoll wifi_essid
-    :interval "20s"
-    `sh scripts/get_essid`)
+(defpoll time :interval "10s"
+  "date '+%H:%M'")
 
 (defvar power_rev false)
 
@@ -48,6 +47,10 @@
                         ))))
 
 (defvar wifi_rev false)
+
+(defpoll wifi_essid
+    :interval "20s"
+    `sh scripts/get_essid`)
 
 (defwidget wifi []
     (eventbox
@@ -115,18 +118,24 @@
                             :orientation "horizontal"
                             :onchange "wpctl set-volume @DEFAULT_AUDIO_SINK@ {}%"
                             )))
+                (box
+                    :orientation "horizontal"
+                    :space-evenly "false"
                     (box
                         :orientation "horizontal"
-                        (box
-                            :class "box-power"
-                            :orientation "horizontal"
-                            :halign "end"
-                            (power))
-                        (box
-                            :orientation "horizontal"
-                            :halign "start"
-                            (wifi))
-                        )))))
+                        (label
+                            :class "module-time"
+                            :text "${time}"))
+                    (box
+                        :class "box-power"
+                        :orientation "horizontal"
+                        :halign "end"
+                        (power))
+                    (box
+                        :orientation "horizontal"
+                        :halign "start"
+                        (wifi))
+                    )))))
 
 (defwindow window-sys []
            :monitor 0
