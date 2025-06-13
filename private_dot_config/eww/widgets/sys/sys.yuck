@@ -20,6 +20,10 @@
             :initial "50"
             "scripts/get_brightness")
 
+(defpoll wifi_essid
+    :interval "20s"
+    `sh scripts/get_essid`)
+
 (defvar power_rev false)
 
 (defwidget power []
@@ -44,10 +48,6 @@
                         ))))
 
 (defvar wifi_rev false)
-
-(defpoll wifi_essid
-    :interval "20s"
-    `sh scripts/get_essid`)
 
 (defwidget wifi []
     (eventbox
