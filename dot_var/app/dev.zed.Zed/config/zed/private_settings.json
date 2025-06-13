@@ -20,6 +20,9 @@
   },
   "autosave": "on_focus_change",
   "terminal": {
+    "shell": {
+      "program": "fish"
+    },
     "line_height": "standard",
     "font_family": "CaskaydiaCove Nerd Font"
   },
