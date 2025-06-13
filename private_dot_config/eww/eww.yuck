@@ -1,0 +1,32 @@
+(defwindow background
+           :monitor 0
+           :geometry (geometry :x "0%"
+                               :y "0%"
+                               :width "100%"
+                               :height "100%"
+                               :anchor "top left")
+           :stacking "bg"
+           :exclusive false
+           :focusable false
+  (image
+    :path "/usr/local/share/backgrounds/shaded.png"))
+
+(deflisten rudeus
+    :initial '{"reveal_workspaces": false, "workspaces": []}'
+    `rudeus-niri`)
+
+(include "widgets/workspaces/workspaces.yuck")
+(include "widgets/sys/sys.yuck")
+
+(defwindow window-workspaces
+           :monitor 0
+           :geometry (geometry :x "4px"
+                               :y "4px"
+                               :anchor "top left")
+           :stacking "overlay"
+           :exclusive false
+           :focusable false
+    (workspaces
+        :orientation "vertical"
+        :reveal {rudeus.reveal_workspaces}
+        :workspaces {rudeus.workspaces}))
