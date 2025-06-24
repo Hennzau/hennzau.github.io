@@ -109,6 +109,10 @@ window-rule {
     }
 }
 
+environment {
+    DISPLAY ":0"
+}
+
 binds {
     Mod+Shift+D { show-hotkey-overlay; }
 

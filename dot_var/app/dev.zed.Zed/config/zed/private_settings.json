@@ -33,5 +33,14 @@
     "just": true,
     "fish": true,
     "catppuccin-icons": true
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "rust": {
+          "analyzerTargetDir": true
+        }
+      }
+    }
   }
 }
