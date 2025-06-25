@@ -1,0 +1,8 @@
+reload:
+    chezmoi apply -v
+
+clone repo:
+    git clone git@github.com:Hennzau/{{repo}}.git
+
+zed dir:
+    flatpak run dev.zed.Zed {{dir}}
