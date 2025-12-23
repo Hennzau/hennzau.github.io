@@ -1,3 +1,0 @@
-#!/bin/bash
-
-echo $(nmcli c | grep wlp1s0 | awk '{print ($1)}')
